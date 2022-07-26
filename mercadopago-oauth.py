@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# This file is part of the MercadoPagoAPI-OAuth-Python/ Project
+# This file is part of the MercadoPagoAPI-OAuth-Python Project
 #    (https://github.com/juniors90/MercadoPagoAPI-OAuth-Python/).
 # Copyright (c) 2022, Ferreira Juan David
 # License: MIT
