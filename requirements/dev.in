@@ -1,0 +1,8 @@
+-r coverage.in
+-r docs.in
+-r docstr-cov.in
+-r mercadopago-oauth.in
+-r style.in
+-r tests.in
+black
+pip-tools
