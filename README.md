@@ -32,13 +32,13 @@
 3. Install dependencies:
 
     ```shell script
-    $> (venv) python -m pip install -r requirements.txt
+    $> (venv) python -m pip install -r requirements/dev.txt
     ```
 
 4. Start the server locally:
 
     ```shell script
-    $> (venv) python john-deere-api.py
+    $> (venv) python mercadopago-oauth.py
     ```
     
 ## Links

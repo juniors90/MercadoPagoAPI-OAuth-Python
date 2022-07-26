@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# This file is part of the Flask-Mercadopago Project
+# This file is part of the MercadoPagoAPI-OAuth-Python/ Project
 #    (https://github.com/juniors90/MercadoPagoAPI-OAuth-Python/).
 # Copyright (c) 2022, Ferreira Juan David
 # License: MIT
@@ -31,7 +31,6 @@ from dotenv import load_dotenv
 
 from flask import (
     Flask,
-    current_app,
     redirect,
     render_template,
     request,
@@ -59,7 +58,9 @@ settings = {
     "callback_url": os.environ.get("CALLBACK_URL"),
     "response_type": "code",
     "state": uuid.uuid1(),
-    "org_connection_completed_url": os.environ.get("ORG_CONNECTION_COMPLETED_URL"),
+    "org_connection_completed_url": os.environ.get(
+        "ORG_CONNECTION_COMPLETED_URL"
+    ),
     "access_token": "",
     "token_type": "",
     "expires_in": "",
@@ -117,7 +118,9 @@ def update_token_info(res):
         "public_key": json_response["public_key"],
         "live_mode": json_response["live_mode"],
     }
-    session["access_token_details"] = json.dumps(access_token_details, indent=4)
+    session["access_token_details"] = json.dumps(
+        access_token_details, indent=4
+    )
 
 
 def update_settings_info(api_response=None):
@@ -185,7 +188,9 @@ def start_oidc():
     settings["client_id"] = request.form["client_id"]
     settings["state"] = request.form["state"]
     settings["callback_url"] = request.form["callback_url"]
-    redirect_url = f"{get_location('authorization_endpoint')}?{get_oidc_query_string()}"
+    redirect_url = (
+        f"{get_location('authorization_endpoint')}?{get_oidc_query_string()}"
+    )
     return redirect(redirect_url, code=302)
 
 
@@ -282,7 +287,11 @@ def preferences():
                 "email": "",
                 "phone": {},
                 "identification": {},
-                "address": {"zip_code": "", "street_name": "", "street_number": 1000},
+                "address": {
+                    "zip_code": "",
+                    "street_name": "",
+                    "street_number": 1000,
+                },
             },
             "payment_methods": {
                 "excluded_payment_methods": [{}],
